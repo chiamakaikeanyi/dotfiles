@@ -1,0 +1,28 @@
+{
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "editor.wordWrap": "bounded",
+  "editor.trimAutoWhitespace": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact"
+  ],
+  "javascript.validate.enable": true,
+  "git.enableSmartCommit": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.tabSize": 2,
+  "gitlens.historyExplorer.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.sideBar.location": "right",
+  "explorer.confirmDelete": false,
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}
