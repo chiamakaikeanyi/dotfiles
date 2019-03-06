@@ -1,5 +1,14 @@
 # NOTE: Commands with space at the end expects a parameter
 
+# Create and delete directories
+alias mkcd='directory(){ mkdir -p "$1"; cd "$1" }; directory '
+alias deld='directory(){ rm -rf "$1" }; directory '
+
+
+# NPM
+alias nis="npm install --save "
+
+
 # Git
 alias gi="git init && gac 'Initial commit'"
 alias gcob="git checkout -b "
