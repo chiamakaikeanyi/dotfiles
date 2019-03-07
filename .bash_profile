@@ -11,6 +11,10 @@ alias mkcd='directory(){ mkdir -p "$1"; cd "$1" }; directory '
 alias deld='directory(){ rm -rf "$1" }; directory '
 
 
+## Restart the current shell
+alias shr="exec -l $SHELL"
+
+
 # Display files with line numbers
 alias line='nl -s". " '
 
