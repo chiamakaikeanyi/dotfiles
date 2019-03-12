@@ -55,22 +55,11 @@ alias ds="docker stop "
 alias dex='f() { docker exec -it "$@" bash};f'
 alias dexsh='f() { docker exec -it "$@" sh};f'
 alias ds='f() { docker stop "$@"};f'
-
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
 
 # Removes unused images
 drin() { docker rmi -f $(docker images --filter "dangling=true" -q); }
-
-# Remove all images
-dri() { docker rmi $(docker images -q); }
-
-# Remove all <none> images
-drin() { docker rmi -f $(docker images --filter "dangling=true" -q); }
-
-# Dockerfile build, e.g., $dbu tcnksm/test
-dbu() { docker build -t=$1 .; }
-
 
 # Kubernetes
 alias gc.auth="gcloud auth login"
