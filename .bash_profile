@@ -57,7 +57,6 @@ alias dexsh='f() { docker exec -it "$@" sh};f'
 alias ds='f() { docker stop "$@"};f'
 # Show all alias related docker
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-
 # Removes unused images
 drin() { docker rmi -f $(docker images --filter "dangling=true" -q); }
 
