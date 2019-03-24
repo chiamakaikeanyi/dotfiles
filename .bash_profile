@@ -5,26 +5,27 @@ alias greet="say Hi everyone"
 alias thank="say Thank you"
 alias wish="say Happy birthday"
 
-
 # Create and delete directories
 alias mkcd='directory(){ mkdir -p "$1"; cd "$1" }; directory '
 alias deld='directory(){ rm -rf "$1" }; directory '
 
+alias copyLastCmd="fc -ln -1 | awk '{\$1=\$1}1' | pbcopy"
+
+# Open my blog on my default web browser
+alias blog="open https://chiamakaikeanyi.dev"
 
 ## Restart the current shell
 alias shr="exec -l $SHELL"
 
-
 # Display files with line numbers
 alias line='nl -s". " '
-
 
 # NPM
 alias nis='f() { npm install --save "$@" };f'
 
-
 # Git
 alias gi="git init && gac 'Initial commit'"
+alias gcl='f() {git clone "$@"};f'
 alias gcob="git checkout -b "
 alias gco="git checkout "
 alias gbr="git branch"
@@ -39,7 +40,8 @@ alias gpom="git push origin master"
 alias gpo="git push origin"
 alias gplom="git pull origin master"
 alias gplo="git pull origin"
-
+alias gm='f() {git merge "$@"};f'
+alias github="open https://github.com/chiamakaikeanyi"
 
 # Docker
 alias dps="docker ps"
@@ -50,13 +52,14 @@ alias di="docker images"
 alias dip="docker image prune"
 alias dri="docker rmi "
 alias drc="docker container rm "
+alias drcf="docker container rm -f "
 alias dcp="docker container prune"
 alias ds="docker stop "
 alias dex='f() { docker exec -it "$@" bash};f'
 alias dexsh='f() { docker exec -it "$@" sh};f'
 alias ds='f() { docker stop "$@"};f'
 # Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/['|\']//g" | sort; }
 # Removes unused images
 drin() { docker rmi -f $(docker images --filter "dangling=true" -q); }
 
@@ -70,22 +73,18 @@ alias kgp='f() { kubectl get pods | grep "$@"};f'
 alias kwp="kubectl get pods -w | grep "
 alias klogs='f() { kubectl logs "$@" };f'
 
-
 # Gatsby
 alias gdev="gatsby develop"
 alias gbuild="gatsby build"
 
-
 # Generate the alias for the last command typed in the terminal
 addAlias() {
-  last_command=$(echo `history |tail -n1` | sed 's/[0-9]* //')
-  echo alias $1="'""$last_command""'" >> ~/.bash_profile
+  last_command=$(echo $(history | tail -n1) | sed 's/[0-9]* //')
+  echo alias $1="'""$last_command""'" >>~/.bash_profile
   . ~/.bash_profile
 }
-
 
 # To check the manual - man figlet
 figlet -k Aliases
 echo -e "\e[32m Avoiding shell hell: Aliases to the rescue"
 echo -e "\e[35m forloop Lagos Summit 2019 | Chiamaka Ikeanyi"
-
