@@ -88,3 +88,23 @@ addAlias() {
 figlet -k Aliases
 echo -e "\e[32m Avoiding shell hell: Aliases to the rescue"
 echo -e "\e[35m forloop Lagos Summit 2019 | Chiamaka Ikeanyi"
+
+
+
+# echo "\e[32m" # Dark Green
+# echo "\e[33m" # Gold
+# echo "\e[35m" # Purple
+# echo "\e[37m" # Light gray
+# echo "\e[92m" # Light Green
+
+# echo "\e[1m" # Bold
+# echo "\e[4m" # Underline
+
+figlet '{ } is poetry'
+echo -e "\e[32m Learn, \e[33mUnlearn,\e[0m \e[32mRelearn. \e[1mJust keep moving...\e[0m"
+
+echo "\e[32m" # Invoke a color
+# figlet -k "{ } is poetry"       # Straight text
+figlet -f slant "{ } is poetry"   # Slant text
+echo "\e[0m"                      # Stop the color
+echo -e "Learn, \e[1;4;33mUnlearn\e[0m, Relearn. \e[1mJust keep moving...\e[0m" # Combine attributes. The attributes must be separated by a semicolon
