@@ -97,13 +97,13 @@ addAlias() {
 
 # The -e parameter is used for the interpretation of backslash
 
-# To check the manual - man figlet
-figlet -k Aliases
+# To check the manual - man figlet 
+figlet -k Aliases   # The -k flag to add a little space between the printed characters yielding a clearer output
 echo -e "\e[32m Avoiding shell hell: Aliases to the rescue\e[0m"
 echo -e "\e[35m forloop Lagos Summit 2019 | Chiamaka Ikeanyi\e[0m"
 
 
-figlet '{ } is poetry'.           # Straight text
+figlet -k '{ } is poetry'.        # Straight text
 echo -e "\e[32m Learn, \e[33mUnlearn,\e[0m \e[32mRelearn. \e[1mJust keep moving...\e[0m"
 
 echo "\e[32m"                     # Invoke a color
