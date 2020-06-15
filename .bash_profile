@@ -111,5 +111,3 @@ echo "\e[32m"                     # Invoke a color
 figlet -f slant "{ } is poetry"   # Slant text
 echo "\e[0m"                      # Reset the color
 echo -e "Learn, \e[1;4;33mUnlearn\e[0m, Relearn. \e[1mJust keep moving...\e[0m" # Combine attributes. The attributes must be separated by a semicolon
-
-[Learn more](https://chiamakaikeanyi.dev/how_to_create_a_custom_message_on_your_terminal/)
