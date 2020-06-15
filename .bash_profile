@@ -86,27 +86,30 @@ addAlias() {
 
 
 # Customizing your terminal
-# echo "\e[32mDark Green"
-# echo "\e[33mGold" 
-# echo "\e[35mPurple" 
-# echo "\e[37mLight gray" 
-# echo "\e[92mLight Green" 
 
-# echo "\e[1mBold"  
-# echo "\e[4mUnderline"  
+# To check the manual - man figlet
+# echo "\e[32mDark Green"
+# echo "\e[33mGold"
+# echo "\e[35mPurple"
+# echo "\e[37mLight gray"
+# echo "\e[92mLight Green"
+
+# echo "\e[1mBold"
+# echo "\e[4mUnderline"
 
 # The -e parameter is used for the interpretation of backslash
+# For a clearer output, you can use the -k flag to add a little space between the printed characters
 
-# To check the manual - man figlet 
 figlet -k Aliases   # The -k flag to add a little space between the printed characters yielding a clearer output
 echo -e "\e[32m Avoiding shell hell: Aliases to the rescue\e[0m"
 echo -e "\e[35m forloop Lagos Summit 2019 | Chiamaka Ikeanyi\e[0m"
 
-
-figlet -k '{ } is poetry'.        # Straight text
-echo -e "\e[32m Learn, \e[33mUnlearn,\e[0m \e[32mRelearn. \e[1mJust keep moving...\e[0m"
+figlet -k '{ } is poetry'
+echo -e "\e[32m Learn, \e[1;4;33mUnlearn,\e[0m \e[32mRelearn. \e[1mJust keep moving...\e[0m"
 
 echo "\e[32m"                     # Invoke a color
 figlet -f slant "{ } is poetry"   # Slant text
-echo "\e[0m"                      # Stop the color
+echo "\e[0m"                      # Reset the color
 echo -e "Learn, \e[1;4;33mUnlearn\e[0m, Relearn. \e[1mJust keep moving...\e[0m" # Combine attributes. The attributes must be separated by a semicolon
+
+[Learn more](https://chiamakaikeanyi.dev/how_to_create_a_custom_message_on_your_terminal/)
