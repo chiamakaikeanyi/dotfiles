@@ -5,43 +5,75 @@ alias greet="say Hi everyone"
 alias thank="say Thank you"
 alias wish="say Happy birthday"
 
+# Open my blog on my default web browser
+alias blog="open https://chiamakaikeanyi.dev"
+
 # Create and delete directories
 alias mkcd='directory(){ mkdir -p "$1"; cd "$1" }; directory '
 alias deld='directory(){ rm -rf "$1" }; directory '
 
+# copy the last command to the clipboard "fix command" (fc) to get you the last command, remove both leading and trailing whitespace for nicer #formatting with awk and then copy it into your Mac's pasteboard with pbcopy
 alias copyLastCmd="fc -ln -1 | awk '{\$1=\$1}1' | pbcopy"
 
-# Open my blog on my default web browser
-alias blog="open https://chiamakaikeanyi.dev"
-
-## Restart the current shell
-alias shr="exec -l $SHELL"
+# Display hidden files 
+alias ll="ls -la"
+alias py=python3
 
 # Display files with line numbers
 alias line='nl -s". " '
+
+# Restart the current shell
+alias shr="exec -l $SHELL"
+
+# Press CMD + C to undo this
+alias wake='caffeinate -t 3600'
+
+# Shutdown my laptop
+alias rest='sudo /sbin/shutdown -h now'
 
 # NPM
 alias nis='f() { npm install --save "$@" };f'
 
 # Git
+alias github="open https://github.com/chiamakaikeanyi"
+alias workspace="git config user.name 'Chiamaka Ikeanyi' && git config user.email 'email@work.com'"
+alias personal="git config user.name 'Chiamaka Ikeanyi' && git config user.email 'email@gmail.com'"
 alias gi="git init && gac 'Initial commit'"
 alias gcl='f() {git clone "$@"};f'
 alias gcob="git checkout -b "
 alias gco="git checkout "
 alias gbr="git branch"
 alias gs="git status"
+alias grn="git branch -m "
 alias ga="git add . "
-alias gc="git commit "
 alias gcm="git commit -m "
 alias gac="ga && gcm"
 alias gp="git push"
 alias gpl="git pull"
-alias gpom="git push origin master"
-alias gpo="git push origin"
+alias gdiff="git diff "
 alias gplom="git pull origin master"
-alias gplo="git pull origin"
+alias gplo="git pull origin "
+alias gpom="git push origin master"
+alias gpo="git push origin "
+alias gr="git reset --hard origin/master"
+alias gdel="git branch -d "
+alias gcp='f() {git cherry-pick "$@"};f'
+alias grb='f() {git rebase "$@"};f'
 alias gm='f() {git merge "$@"};f'
-alias github="open https://github.com/chiamakaikeanyi"
+alias gk="gitk"
+alias gui="git gui"
+alias gstats="git shortlog -sn --all --no-merges"
+alias gitoverview="git log --all --oneline --no-merges"
+alias gchange='f() {git log --oneline --no-merges "$@"..HEAD};f'
+alias gitrecap='f() {git log --all --oneline --no-merges --author="$@"};f'
+alias gittoday='f() {git log --since=00:00:00 --all --oneline --no-merges --author="$@"};f'
+alias gitrecent='git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
+alias gitweeks="git log --all --since='2 weeks' --oneline --no-merges"
+alias gstatd="git shortlog -sn --since='10 weeks' --until='2 weeks'"
+
+# Gatsby
+alias gdev="gatsby develop"
+alias gbuild="gatsby build"
 
 # Docker
 alias dps="docker ps"
@@ -72,10 +104,6 @@ alias kgs='f() { kubectl get svc "$@" };f'
 alias kgp='f() { kubectl get pods | grep "$@"};f'
 alias kwp="kubectl get pods -w | grep "
 alias klogs='f() { kubectl logs "$@" };f'
-
-# Gatsby
-alias gdev="gatsby develop"
-alias gbuild="gatsby build"
 
 # Generate the alias for the last command typed in the terminal
 addAlias() {
