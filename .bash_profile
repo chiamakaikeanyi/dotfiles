@@ -36,8 +36,8 @@ alias nis='f() { npm install --save "$@" };f'
 
 # Git
 alias github="open https://github.com/chiamakaikeanyi"
-alias workspace="git config user.name 'Chiamaka Ikeanyi' && git config user.email 'email@work.com'"
-alias personal="git config user.name 'Chiamaka Ikeanyi' && git config user.email 'email@gmail.com'"
+alias personal="git config user.name 'Firstname Lastname' && git config user.email 'email@gmail.com'"
+alias workspace="git config user.name 'Firstname Lastname' && git config user.email 'email@work.com'"
 alias gi="git init && gac 'Initial commit'"
 alias gcl='f() {git clone "$@"};f'
 alias gcob="git checkout -b "
