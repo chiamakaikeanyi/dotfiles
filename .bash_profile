@@ -15,7 +15,7 @@ alias deld='directory(){ rm -rf "$1" }; directory '
 # copy the last command to the clipboard "fix command" (fc) to get you the last command, remove both leading and trailing whitespace for nicer #formatting with awk and then copy it into your Mac's pasteboard with pbcopy
 alias copyLastCmd="fc -ln -1 | awk '{\$1=\$1}1' | pbcopy"
 
-# Display hidden files 
+# Display hidden files
 alias ll="ls -la"
 alias py=python3
 
@@ -31,8 +31,13 @@ alias wake='caffeinate -t 3600'
 # Shutdown my laptop
 alias rest='sudo /sbin/shutdown -h now'
 
+# Delete contents of node modules
+alias deln='rm -rf ./node_modules'
+
 # NPM
 alias nis='f() { npm install --save "$@" };f'
+alias ya='f() {yarn add "$@"};f'
+alias yad='f() {yarn add -D "$@"};f'
 
 # Git
 alias github="open https://github.com/chiamakaikeanyi"
@@ -55,6 +60,9 @@ alias gplom="git pull origin master"
 alias gplo="git pull origin "
 alias gpom="git push origin master"
 alias gpo="git push origin "
+# Here the rev-parse command gets the name of the current local branch. If no remote branch exists for the local branch, this command will create a new one.
+alias gacp='f() {git add -A && git commit -m "$@" && git push origin $(git rev-parse --abbrev-ref HEAD)};f'
+alias gr='git fetch --all && git rebase origin/master'
 alias gr="git reset --hard origin/master"
 alias gdel="git branch -d "
 alias gcp='f() {git cherry-pick "$@"};f'
