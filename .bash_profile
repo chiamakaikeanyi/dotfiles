@@ -141,7 +141,7 @@ figlet -k Aliases   # The -k flag to add a little space between the printed char
 echo -e "\e[32m Avoiding shell hell: Aliases to the rescue\e[0m"
 echo -e "\e[35m forloop Lagos Summit 2019 | Chiamaka Ikeanyi\e[0m"
 
-figlet -k '{ } is poetry'
+figlet -k -f small 'Curiosity & Grit'
 echo -e "\e[32m Learn, \e[1;4;33mUnlearn,\e[0m \e[32mRelearn. \e[1mJust keep moving...\e[0m"
 
 echo "\e[32m"                     # Invoke a color
